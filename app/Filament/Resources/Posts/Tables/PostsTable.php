@@ -18,6 +18,8 @@ class PostsTable
             ->columns([
                 TextColumn::make('title')
                     ->searchable(),
+                TextColumn::make('body')
+                    ->searchable(),
                 IconColumn::make('is_published')
                     ->boolean(),
                 TextColumn::make('created_at')
