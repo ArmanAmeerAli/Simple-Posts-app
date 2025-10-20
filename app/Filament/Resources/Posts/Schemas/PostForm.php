@@ -14,9 +14,15 @@ class PostForm
         return $schema
             ->components([
                 TextInput::make('title')
-                    ->required(),
+                    ->required()
+                    ->minLength(3)
+                    ->maxLength(255)
+                    ->unique()
+                    ->label('Title'),
                 Textarea::make('body')
                     ->required()
+                    ->minLength(10)
+                    ->label('Body')
                     ->columnSpanFull(),
                 Toggle::make('is_published')
                     ->required(),
